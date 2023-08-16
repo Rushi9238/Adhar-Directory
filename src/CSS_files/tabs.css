@@ -1,0 +1,11 @@
+.wrapper-tabs {
+  padding: 16px 0px;
+  display: flex;
+  gap: 16px;
+}
+
+.active {
+  font-weight: 500;
+  border: 1px solid gray;
+  /* transform: scale(1.1); */
+}

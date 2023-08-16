@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header/Header";
+import Add from "./components/Add/Add";
+import Retrieve from "./components/Retrieve/Retrieve";
+// import "./App.css";
+import Tabs from "./components/Tabs/Tabs";
 
-function App() {
+const TABS = {
+  Add: "Add",
+  Retrieve: "Retrieve",
+};
+
+const App = () => {
+  const [currentTab, setCurrentTab] = useState(TABS.Add);
+
+  const changeTab = (value) => {
+    setCurrentTab(value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{background: 'linear-gradient(180deg, rgba(65, 95, 255, 0.30) 0%, rgba(0, 200, 255, 0.00) 100%)'}}>
+      <Header />
+      <div className="wrapper">
+        <Tabs changeTab={changeTab} currentTab={currentTab} />
+        {currentTab === TABS.Add ? <Add /> : <Retrieve />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

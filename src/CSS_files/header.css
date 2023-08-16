@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(0, 200, 255, 0.30) 0%, rgba(65, 95, 255, 0.30) 100%);
+  padding: 20px 0;
+}
